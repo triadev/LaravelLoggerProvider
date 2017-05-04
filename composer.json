@@ -1,0 +1,21 @@
+{
+  "name": "triadev/laravel-logger-provider",
+  "description": "A laravel service provider for logging.",
+  "keywords": ["Monolog", "Laravel", "Lumen"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christopher Lorke",
+      "email": "christopher.lorke@gmx.de"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "laravel/framework": "5.4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Triadev\\Logger\\": "src/"
+    }
+  }
+}
