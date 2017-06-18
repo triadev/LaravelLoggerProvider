@@ -12,7 +12,7 @@ class StreamHandlerFactoryTest extends \PHPUnit\Framework\TestCase
      */
     public function it_test_create_a_stream_handler()
     {
-        $streamHandlerFactory = new \Triadev\Logger\Provider\StreamHandlerFactory();
+        $streamHandlerFactory = new \Triadev\Logger\Factory\StreamHandlerFactory();
 
         $streamHandler = $streamHandlerFactory->createStreamHandler(
             'stream',
@@ -28,7 +28,7 @@ class StreamHandlerFactoryTest extends \PHPUnit\Framework\TestCase
      */
     public function it_test_create_a_logstash_stream_handler()
     {
-        $streamHandlerFactory = new \Triadev\Logger\Provider\StreamHandlerFactory();
+        $streamHandlerFactory = new \Triadev\Logger\Factory\StreamHandlerFactory();
 
         $streamHandler = $streamHandlerFactory->createStreamHandler(
             'logstash',

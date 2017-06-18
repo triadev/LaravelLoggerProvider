@@ -1,5 +1,5 @@
 <?php
-namespace Triadev\Logger\Provider;
+namespace Triadev\Logger\Factory;
 
 use Monolog\Formatter\LogstashFormatter;
 use Monolog\Handler\StreamHandler;

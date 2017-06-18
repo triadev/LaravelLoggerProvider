@@ -4,6 +4,7 @@ namespace Triadev\Logger\Provider;
 use Illuminate\Support\ServiceProvider;
 use Log;
 use Config;
+use Triadev\Logger\Factory\StreamHandlerFactory;
 
 /**
  * Class LoggerServiceProvider
