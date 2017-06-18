@@ -2,9 +2,6 @@
 namespace Triadev\Logger\Provider;
 
 use Illuminate\Support\ServiceProvider;
-use Monolog\Formatter\LogstashFormatter;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 use Log;
 use Config;
 
@@ -34,8 +31,9 @@ class LoggerServiceProvider extends ServiceProvider
         $config = Config::get('sc-logger');
 
         // Handler
-        $handler = $this->createStreamHandler(
-            strtolower($config['log_type']),
+        $streamHandlerFactory = new StreamHandlerFactory();
+        $handler = $streamHandlerFactory->createStreamHandler(
+            $config['log_type'],
             $config['log_stream'],
             $config['log_level']
         );
@@ -56,32 +54,5 @@ class LoggerServiceProvider extends ServiceProvider
     public function register()
     {
         //
-    }
-
-    /**
-     * Create stream handler
-     *
-     * @param string $type
-     * @param string $stream
-     * @param string $level
-     * @return StreamHandler
-     */
-    private function createStreamHandler(string $type, string $stream, string $level) : StreamHandler
-    {
-        switch ($type) {
-            case 'stream':
-                $handler = new StreamHandler($stream, $level);
-                break;
-            case 'logstash':
-                $handler = new StreamHandler($stream, $level);
-                $handler->setFormatter(
-                    new LogstashFormatter('Logger')
-                );
-                break;
-            default:
-                $handler = new StreamHandler('php://stdout', Logger::DEBUG);
-        }
-
-        return $handler;
     }
 }
