@@ -3,6 +3,7 @@
 [![Software license][ico-license]](LICENSE)
 [![Latest stable][ico-version-stable]][link-packagist]
 [![Monthly installs][ico-downloads-monthly]][link-downloads]
+[![Travis][ico-travis]][link-travis]
 
 A laravel service provider for logging.
 
@@ -57,6 +58,8 @@ The code for LaravelLoggerProvider is distributed under the terms of the MIT lic
 [ico-license]: https://img.shields.io/github/license/triadev/LaravelLoggerProvider.svg?style=flat-square
 [ico-version-stable]: https://img.shields.io/packagist/v/triadev/laravel-logger-provider.svg?style=flat-square
 [ico-downloads-monthly]: https://img.shields.io/packagist/dm/triadev/laravel-logger-provider.svg?style=flat-square
+[ico-travis]: https://travis-ci.org/triadev/LaravelLoggerProvider.svg?branch=master
 
 [link-packagist]: https://packagist.org/packages/triadev/laravel-logger-provider
 [link-downloads]: https://packagist.org/packages/triadev/laravel-logger-provider/stats
+[link-travis]: https://travis-ci.org/triadev/LaravelLoggerProvider
