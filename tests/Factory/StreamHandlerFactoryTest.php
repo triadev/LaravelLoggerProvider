@@ -9,6 +9,7 @@ class StreamHandlerFactoryTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
+     * @group LoggerProvider
      */
     public function it_test_create_a_stream_handler()
     {
@@ -25,6 +26,7 @@ class StreamHandlerFactoryTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
+     * @group LoggerProvider
      */
     public function it_test_create_a_logstash_stream_handler()
     {
