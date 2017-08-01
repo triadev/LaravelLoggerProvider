@@ -3,8 +3,8 @@ namespace Triadev\Logger\Provider;
 
 use Illuminate\Support\ServiceProvider;
 use Log;
-use Config;
 use Triadev\Logger\Factory\StreamHandlerFactory;
+use Monolog\Logger;
 
 /**
  * Class LoggerServiceProvider
@@ -29,7 +29,7 @@ class LoggerServiceProvider extends ServiceProvider
 
         $this->mergeConfigFrom($source, 'sc-logger');
 
-        $config = Config::get('sc-logger');
+        $config = config('sc-logger');
 
         // Handler
         $streamHandlerFactory = new StreamHandlerFactory();
@@ -44,6 +44,17 @@ class LoggerServiceProvider extends ServiceProvider
             Log::getMonolog()->pushHandler(
                 $handler
             );
+        } elseif (class_exists('Laravel\Lumen\Application', false)) {
+            $app = $this->app;
+            $this->app->configureMonologUsing(function ($monolog) use (
+                $app,
+                $handler
+            ) {
+                /** @var Logger $monolog */
+                $monolog->pushHandler($handler);
+                
+                return $monolog;
+            });
         }
     }
 

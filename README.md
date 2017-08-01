@@ -5,7 +5,7 @@
 [![Monthly installs][ico-downloads-monthly]][link-downloads]
 [![Travis][ico-travis]][link-travis]
 
-A laravel service provider for logging.
+A laravel and lumen service provider for logging.
 
 ## Main features
 - Stream
@@ -35,7 +35,7 @@ This will create a file ```config/sc-logger.php```.
 | Key        | Value           | Description  |
 |:-------------:|:-------------:|:-----:|
 | LOG_TYPE | STRING | stream or logstash |
-| LOG_STREAM | INTEGER | php://stdout, ... |
+| LOG_STREAM | STRING | php://stdout, ... |
 | LOG_LEVEL | STRING | debug,error, ... |
 
 ## Reporting Issues
