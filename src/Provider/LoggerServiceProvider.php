@@ -41,7 +41,7 @@ class LoggerServiceProvider extends ServiceProvider
 
         // Register
         if (class_exists('Illuminate\Foundation\Application', false)) {
-            Log::getMonolog()->pushHandler(
+            Log::getLogger()->pushHandler(
                 $handler
             );
         } elseif (class_exists('Laravel\Lumen\Application', false)) {
